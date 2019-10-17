@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>VeloCity | Votre vélo en libre-service dans la capitale irlandaise !</title>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width" />
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://velocity.bysefal.com/">
+		<meta property="og:title" content="VeloCity | Votre vélo en libre-service dans la capitale irlandaise !">
+		<meta property="og:description" content="">
+		<meta property="og:image" content="">
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://velocity.bysefal.com/">
+		<meta property="twitter:title" content="VeloCity | Votre vélo en libre-service dans la capitale irlandaise !">
+		<meta property="twitter:description" content="">
+		<meta property="twitter:image" content="">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap">
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="images/favicon.ico"/>
+	</head>
+	<body id="accueil" class="menu">
+		<header>
+			<div id="logo">
+				<a href="https://velocity.bysefal.com" title="Accueil">
+					<div id="wheel"></div>
+					<img id="log" src="images/logo.png" alt="velocity location velo dublin"/>
+				</a>
+			</div>
+			<nav id="navleft">
+				<ul>
+					<li class="active"><a href="#accueil">Accueil</a></li>
+					<li><a href="#information">Information</a></li>
+				</ul>
+			</nav>
+			<nav id="navright">
+				<ul>
+					<li><a href="#carte">Réserver</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+			<nav id="mobilemenu">
+				<ul>
+					<li class="active">
+						<a href="#accueil"><i class="fas fa-home"></i></a>
+					</li>
+					<li>
+						<a href="#information"><i class="fas fa-info-circle"></i></a>
+					</li>
+					<li>
+						<a href="#carte"><i class="icon-velocity"></i></a>
+					</li>
+					<li>
+						<a href="#contact"><i class="fas fa-envelope"></i></a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section id="diap">
+			<div id="slider">
+				<figure id="slide1" class="slide">
+					<figcaption>
+						Lorem ipsum dolor sit amet
+					</figcaption>
+				</figure>
+				<figure id="slide2" class="slide">
+					<figcaption>
+						Lorem ipsum dolor sit amet
+					</figcaption>
+				</figure>
+				<figure id="slide3" class="slide">
+					<figcaption>
+						Lorem ipsum dolor sit amet
+					</figcaption>
+				</figure>
+				<figure id="slide4" class="slide">
+					<figcaption>
+						Lorem ipsum dolor sit amet
+					</figcaption>
+				</figure>
+				<figure id="slide5" class="slide">
+					<figcaption>
+						Lorem ipsum dolor sit amet
+					</figcaption>
+				</figure>
+				<a id="reserver" href="#carte">Réserver</a>
+			</div>
+			<button id="prev"></button>
+			<button id="next"></button>
+		</section>
+		<div id="navlegend">
+			<div class="circle pulse">
+				<img id="circle1" src="images/bikegreen.svg" width="30" height="30" />
+			</div>
+			<div class="line"></div>
+			<div class="circle">
+				<p id="circle2">
+					Lorem ipsum
+				</p>
+			</div>
+			<div class="line"></div>
+			<div class="circle">
+				<p id="circle3">
+					Lorem ipsum
+				</p>
+			</div>
+		</div>
+		<section id="information" class="menu">
+			<h2>Information</h2>
+			<p>
+    			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum enim id libero laoreet gravida. Nulla ornare consectetur odio quis hendrerit. Aliquam vel sem quis purus vehicula fringilla. Fusce 
+    			varius fermentum enim. Pellentesque vulputate magna dolor, rutrum cursus arcu pellentesque maximus. Phasellus dolor lorem, feugiat a enim in, dignissim dapibus massa. Nullam feugiat lorem leo, sit amet mollis
+    			urna tempus pretium. Vestibulum sed tincidunt justo, at condimentum ligula. Donec lacinia neque vitae leo eleifend, at consequat orci porttitor. Sed massa nibh, volutpat eget lorem ac, sollicitudin accumsan
+    			mauris. Nullam porta dignissim convallis. In porttitor mauris nisi, hendrerit euismod felis tincidunt at. Cras ullamcorper mauris lectus, eu dignissim turpis consequat eget. Mauris vel faucibus ante.
+    			Vestibulum pellentesque enim eget semper consequat.
+			</p>
+		</section>
+		<section id="service">
+			<div id="t1"></div>
+			<div class="line2"></div>
+			<div id="t2"></div>
+			<div class="line2"></div>
+			<div id="t3"></div>
+		</section>
+		<section id="carte" class="menu">
+			<h2>Réserver un vélo</h2>
+			<div id="map">
+				<div id="reservation">
+					<div id="close">
+						<p>
+							X
+						</p>
+					</div>
+					<div id="station-info"></div>
+					<div id="form">
+						<form method="post" action="contact.php">
+							<p>
+								<input type="text" name="name" placeholder="Nom" required/>
+								<br />
+								<input type="text" placeholder="Prénom" required/>
+								<br />
+								<input class="button" type="submit" value="Réserver" />
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--<div id="reservation-valid">
+			<div id="timer">
+				<p>Vous avez réservé un vélo à la station ... votre réservation prendra fin dans <span>20</span> minutes.<br/>
+				</p>
+			</div>
+		</div>-->
+		<section id="legende">
+			<div id="bgreen">
+				Station ouverte
+			</div>
+			<div id="borange">
+				Aucun vélo disponible
+			</div>
+			<div id="bred">
+				Sation fermée
+			</div>
+		</section>
+		<section id="contact" class="menu">
+		</section>
+		<footer>
+			<div id="dublin">
+				<a href="http://www.dublincity.ie/" target="blank" title="Dublin City Council"><img src="images/dublin.png" width="135" height="135" alt="logo dublin city council" /></a>
+			</div>
+			<p>
+				VeloCity © 2019 - Tous droits réservés 
+			</p>
+		</footer>
+		<script src="js/map.js"></script>
+		<script src="js/slider.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/smoothscroll.js"></script>
+		<script src="https://kit.fontawesome.com/535b686577.js"></script>
+	</body>
+</html>
