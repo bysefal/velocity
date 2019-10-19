@@ -6,10 +6,10 @@ const data = JSON.parse(this.responseText);
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaHBtIiwiYSI6ImNqeDRrZmlwMTA5b2QzeW50eHZqM3MweTIifQ.N87k4WgfOf0x0e9Jn2Yv5g';
 const map = new mapboxgl.Map({
-container: 'map',
-center: [-6.257, 53.348],
-zoom: 12.5,
-style: 'mapbox://styles/hpm/ck0u3ztpb19h61ckfv331406o'
+  container: 'map',
+  center: [-6.257, 53.348],
+  zoom: 12.5,
+  style: 'mapbox://styles/hpm/ck0u3ztpb19h61ckfv331406o'
 });
 
 // Add zoom and rotation controls to the map.
