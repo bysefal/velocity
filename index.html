@@ -135,27 +135,34 @@
 							X
 						</p>
 					</div>
+					<div id="station-block">
+					<div id="station-name"></div>
 					<div id="station-info"></div>
-					<div id="form">
-						<form method="post" action="contact.php">
+					</div>
+					<button id="bouton-reserver" type="button">Réserver</button>
+                    <div id="form">
 							<p>
-								<input type="text" name="name" placeholder="Nom" required/>
+								<input type="text" name="name" id="name" placeholder="Nom" required/>
 								<br />
-								<input type="text" placeholder="Prénom" required/>
+								<input type="text" name="name" id="firstname" placeholder="Prénom" required/>
 								<br />
-								<input class="button" type="submit" value="Réserver" />
+								<br />
+								<input class="button" type="submit" id="valider" value="Valider" />
 							</p>
-						</form>
+					</div>
+						<canvas id="sign" width="300" height="170"></canvas>
+
+					<div id="message-validation">
+					    <p>Votre réservation a bien été enregistrée</p>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!--<div id="reservation-valid">
+		<div id="reservation-valid">
 			<div id="timer">
-				<p>Vous avez réservé un vélo à la station ... votre réservation prendra fin dans <span>20</span> minutes.<br/>
-				</p>
+				
 			</div>
-		</div>-->
+		</div>
 		<section id="legende">
 			<div id="bgreen">
 				Station ouverte
@@ -168,6 +175,22 @@
 			</div>
 		</section>
 		<section id="contact" class="menu">
+		    <h2>Nous contacter</h2>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum enim id libero laoreet gravida. Nulla ornare consectetur odio quis hendrerit. Aliquam vel sem quis purus vehicula fringilla. Fusce varius fermentum enim. Pellentesque vulputate magna dolor, rutrum cursus arcu pellentesque maximus. Phasellus dolor lorem, feugiat a enim in, dignissim dapibus massa. Nullam feugiat lorem leo, sit amet mollis urna tempus pretium. Vestibulum sed tincidunt justo, at condimentum ligula. Donec lacinia neque vitae leo eleifend, at consequat orci porttitor. Sed massa nibh, volutpat eget lorem ac, sollicitudin accumsan mauris. Nullam porta dignissim convallis. In porttitor mauris nisi, hendrerit euismod felis tincidunt at. Cras ullamcorper mauris lectus, eu dignissim turpis consequat eget. Mauris vel faucibus ante. Vestibulum pellentesque enim eget semper consequat. 
+		    </p>
+		    <div id="contactform">
+						<form method="post" action="send_form.php">
+
+
+    <input type="text" name="first_name" placeholder="Prénom" required>
+    <input type="text" name="last_name" placeholder="Nom" required>
+    <input type="text" name="email" placeholder="Email" required>
+    <textarea id="subject" name="subject" placeholder="Message" required></textarea>
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+					</div>
 		</section>
 		<footer>
 			<div id="dublin">
@@ -177,6 +200,9 @@
 				VeloCity © 2019 - Tous droits réservés 
 			</p>
 		</footer>
+		
+		<script src="js/timer.js"></script>
+		<script src="js/signature.js"></script>
 		<script src="js/map.js"></script>
 		<script src="js/slider.js"></script>
 		<script src="js/menu.js"></script>

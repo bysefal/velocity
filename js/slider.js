@@ -1,93 +1,75 @@
-(function() {
-	
-	function Slideshow(element) {
-		this.el = document.querySelector(element);
-		this.init();
-	}
-	
-	Slideshow.prototype = {
-		init: function() {
-			this.wrapper = this.el.querySelector( "#slider" );
-			this.slides = this.el.querySelectorAll( ".slide" );
-			this.previous = this.el.querySelector( "#prev" );
-			this.next = this.el.querySelector( "#next" );
-			this.index = 0;
-			this.timer = null;
+class Slideshow {
+    constructor(container, time) {
+        this.container = container;
+        this.timelaunch = time;
+        this.slider = document.querySelector(this.container);
 
-			
-			this.action();
-			this.nextSlide();
-			this.prevSlide();
-			this.stopStart();	
-		},
-		
-	    slideTo: function( slide ) {
-			var currentSlide = this.slides[slide];
-			currentSlide.style.opacity = 1;
-			
-			for( var i = 0; i < this.slides.length; i++ ) {
-				var slide = this.slides[i];
-				if( slide !== currentSlide ) {
-					slide.style.opacity = 0;
-				}
-			}
-		},
-		
-		action: function() {
-			var self = this;
-			self.timer = setInterval(function() {
-				self.index++;
-				if( self.index == self.slides.length ) {
-					self.index = 0;
-				}
-				self.slideTo( self.index );
-				
-			}, 5000);
-		},
-		
-		/* Pause/Play */
-		stopStart: function() {
-			var self = this;
-			self.el.addEventListener( "mouseover", function() {
-				clearInterval( self.timer );
-				self.timer = null;
-				
-			}, false);
-			self.el.addEventListener( "mouseout", function() {
-				self.action();
-				
-			}, false);
-		},
-		
-		/* Aller au slide suivant */
-		nextSlide: function() {
-		    var self = this;
-		    self.next.addEventListener( "click", function() {
-		           self.index++;
-		           	if( self.index == self.slides.length ) {
-					self.index = 0;
-				}
-				self.slideTo( self.index );
-		    })
-		},
-		
-	    /* Aller au slide précédent */		
-		prevSlide: function() {
-		    var self = this;
-		    self.previous.addEventListener( "click", function() {
-		            self.index--;
-		           	if (self.index < 0){
-                    self.index = (self.slides.length - 1);
-				}
-				self.slideTo( self.index );
-		    })	
-		}
-	};
+        this.wrapper = this.slider.querySelector("#slider");
+        this.slides = this.slider.querySelectorAll(".slide");
+        this.previous = this.slider.querySelector("#prev");
+        this.next = this.slider.querySelector("#next");
+        this.index = 0;
+        this.time = null;
 
-	
-	document.addEventListener( "DOMContentLoaded", function() {
-		
-		var slider = new Slideshow( "#diap" );
-		
-	});
-})();
+        this.timer();
+
+        this.next.addEventListener("click", this.nextSlide.bind(this));
+        this.previous.addEventListener("click", this.prevSlide.bind(this));
+        document.addEventListener("keydown", this.keyboard.bind(this));
+        this.slider.addEventListener("mouseover", this.stop.bind(this), false);
+        this.slider.addEventListener("mouseout", this.start.bind(this), false);
+    }
+
+    slideTo(slide) {
+        const currentSlide = this.slides[slide];
+        currentSlide.style.opacity = 1;
+
+        for (let i = 0; i < this.slides.length; i++) {
+            const slide = this.slides[i];
+            if (slide !== currentSlide) {
+                slide.style.opacity = 0;
+            }
+        }
+    }
+
+    timer() {
+        this.time = setInterval(this.nextSlide.bind(this), this.timelaunch);
+    }
+
+    stop() {
+        clearInterval(this.time);
+        this.time = null;
+    }
+
+
+    start() {
+        this.timer();
+    }
+
+    keyboard(e) {
+        if (e.keyCode === 37) {
+            this.nextSlide();
+        } else if (e.keyCode === 39) {
+            this.prevSlide();
+        }
+    }
+
+
+    nextSlide() {
+        this.index++;
+        if (this.index == this.slides.length) {
+            this.index = 0;
+        }
+        this.slideTo(this.index);
+    }
+
+    prevSlide() {
+        this.index--;
+        if (this.index < 0) {
+            this.index = (this.slides.length - 1);
+        }
+        this.slideTo(this.index);
+    }
+};
+
+const slider = new Slideshow("#diap", 5000);
