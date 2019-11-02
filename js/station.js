@@ -9,7 +9,6 @@ class Station {
     this.status = status;
     this.available_bike_stands = availableBikeStands;
     this.available_bikes = availableBikes;
-    this.last_update = lastupdate;
-
+    
     }
 };    
