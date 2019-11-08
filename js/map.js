@@ -3,7 +3,12 @@ const url = 'https://api.jcdecaux.com/vls/v1/stations?contract=dublin&apiKey=' +
 const request = new XMLHttpRequest();
 request.onload = function() {
 
+    const slider = new Slideshow("#diap", 5000); // Slider
+    
+    
+    
     const stations = JSON.parse(this.responseText);
+    
     mapboxgl.accessToken = 'pk.eyJ1IjoiaHBtIiwiYSI6ImNqeDRrZmlwMTA5b2QzeW50eHZqM3MweTIifQ.N87k4WgfOf0x0e9Jn2Yv5g';
     const map = new mapboxgl.Map({
         container: 'map',
@@ -15,7 +20,7 @@ request.onload = function() {
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
 
-    map.scrollZoom.disable();
+    map.scrollZoom.disable(); 
 
     // add markers to map
 
@@ -31,11 +36,13 @@ request.onload = function() {
         const signature = document.querySelector('#sign');
         const valider = document.querySelector('#valider');
         const formName = document.getElementById('name');
+        const formNameText = document.getElementById('name-text');
         const formFirstname = document.getElementById('firstname');
+        const formFirstnameText = document.getElementById('firstname-text');
         const validReservation = document.querySelector('#reservation-valid');
         const timer = document.querySelector('#timer');
         const messageValidation = document.querySelector('#message-validation');
-        var countdown = null;
+        const inputValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
         markerStation.className = 'marker-green';
 
         close.addEventListener("click", function() {
@@ -73,6 +80,49 @@ request.onload = function() {
 
         });
 
+
+
+
+            
+            valider.addEventListener('click', validation);
+            
+            function validation(event){
+
+
+                //Si le champ est vide
+                if (formFirstname.validity.valueMissing || formName.validity.valueMissing){
+                    event.preventDefault();
+                    formFirstnameText.textContent = 'Veuillez remplir tous les champs !';
+                    formFirstnameText.style.color = '#ce3636';
+                } 
+                else{ 
+                    
+                    formulaire.style.display ="none";
+                    stationInfo.style.display ="none";
+                    stationName.style.display="none";
+                    signature.style.display = "none";
+                    messageValidation.classList.add('display');
+                    validReservation.style.display = "flex";
+                    
+            
+                    localStorage.setItem('Nom',formName.value);
+                    localStorage.setItem('Prénom',formFirstname.value);
+                    localStorage.setItem('Timer', timer);
+                    
+                    //localStorage.setItem('data', '{"nom":"Fred", "datetime":"25/10/2019 20:15:00"}');
+            
+                    
+                    const  name = localStorage.getItem("Nom");
+                    const firstName = localStorage.getItem("Prénom");
+                    const timeR = localStorage.getItem("Timer");
+                    const count = new Timer('timer', 20, 'time', 'timetext');
+        
+                   
+                    timer.innerHTML= "Vélo réservé par " + firstName + "&nbsp;" + name + " à la station " + station.name + ", <br />votre réservation prendra fin dans " + "<span id='time'>20:00</span>" + " <span id='timetext'> minutes</span>";
+                }
+            }
+
+
         boutonReserver.addEventListener("click", function() {
             
             stationName.classList.add('display');
@@ -84,46 +134,22 @@ request.onload = function() {
             boutonReserver.style.display = "none";
             
                                     
-            if (formName.value.length < 1 && formFirstname.value.length < 1 ) {
+           /* if (formName.value.length < 1) {
             valider.style.opacity= 0;
-            alert("Veuillez remplir correctement tous les champs");
-            return true;
+            }
+            else if (formFirstname.value.length < 1){
+            valider.style.opacity= 0;    
             }
             else {
             valider.style.opacity= 1;
-            }
+            }*/
         });
 
 
-        valider.addEventListener("click", function(){
 
-            formulaire.style.display ="none";
-            stationInfo.style.display ="none";
-            stationName.style.display="none";
-            signature.style.display = "none";
-            messageValidation.classList.add('display');
-            validReservation.style.display = "flex";
-            
-    
-            localStorage.setItem('Nom',formName.value);
-            localStorage.setItem('Prénom',formFirstname.value);
-            
-            localStorage.setItem('data', '{"nom":"Fred", "datetime":"25/10/2019 20:15:00"}');
-    
-            
-            const  name = localStorage.getItem("Nom");
-            const firstName = localStorage.getItem("Prénom");
-            
-           
-            
-                      
-            document.getElementById('timer').innerHTML= "Vélo réservé par " + firstName + "&nbsp;" + name + " à la station " + station.name + ", <br />votre réservation prendra fin dans " + countdown.show() +" minutes" ;
-                
-    
-        });
+
         
-        var countdown = new Timer(1201);
-
+                
         // make a marker for each feature and add to the map
         new mapboxgl.Marker(markerStation)
             .setLngLat(station.position)

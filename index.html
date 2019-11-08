@@ -2,7 +2,7 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<title>VeloCity | Votre vélo en libre-service dans la capitale irlandaise !</title>
+		<title>velOCity | Votre vélo en libre-service dans la capitale irlandaise !</title>
 		<meta name="description" content=""/>
 		<meta name="viewport" content="width=device-width" />
 		<!-- Open Graph / Facebook -->
@@ -143,11 +143,13 @@
                     <div id="form">
 							<p>
 								<input type="text" name="name" id="name" placeholder="Nom" required/>
+								<span id="name-text"></span>
 								<br />
 								<input type="text" name="name" id="firstname" placeholder="Prénom" required/>
+								<span id="firstname-text"></span>
 								<br />
 								<br />
-								<input class="button" type="submit" id="valider" value="Valider" />
+								<input class="button" type="submit" id="valider" value="Valider" name="valider" />
 							</p>
 					</div>
 						<canvas id="sign" width="300" height="170"></canvas>
@@ -176,37 +178,118 @@
 		</section>
 		<section id="contact" class="menu">
 		    <h2>Nous contacter</h2>
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum enim id libero laoreet gravida. Nulla ornare consectetur odio quis hendrerit. Aliquam vel sem quis purus vehicula fringilla. Fusce varius fermentum enim. Pellentesque vulputate magna dolor, rutrum cursus arcu pellentesque maximus. Phasellus dolor lorem, feugiat a enim in, dignissim dapibus massa. Nullam feugiat lorem leo, sit amet mollis urna tempus pretium. Vestibulum sed tincidunt justo, at condimentum ligula. Donec lacinia neque vitae leo eleifend, at consequat orci porttitor. Sed massa nibh, volutpat eget lorem ac, sollicitudin accumsan mauris. Nullam porta dignissim convallis. In porttitor mauris nisi, hendrerit euismod felis tincidunt at. Cras ullamcorper mauris lectus, eu dignissim turpis consequat eget. Mauris vel faucibus ante. Vestibulum pellentesque enim eget semper consequat. 
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum enim id libero laoreet gravida. Nulla ornare consectetur odio quis hendrerit. Aliquam vel sem quis purus vehicula fringilla. Fusce varius fermentum enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		    </p>
 		    <div id="contactform">
-						<form method="post" action="send_form.php">
-
-
-    <input type="text" name="first_name" placeholder="Prénom" required>
-    <input type="text" name="last_name" placeholder="Nom" required>
-    <input type="text" name="email" placeholder="Email" required>
-    <textarea id="subject" name="subject" placeholder="Message" required></textarea>
-
-    <input type="submit" value="Envoyer">
-
-  </form>
+            	<form action="#" method="post" id="contact_form">
+                <div id="name">
+                  <label for="name"></label>
+                  <input type="text" placeholder="Nom *" name="name" id="name_input" required>
+                </div>
+                <div id="email">
+                  <label for="email"></label>
+                  <input type="email" placeholder="E-mail *" name="email" id="email_input" required>
+                </div>
+                <div id="telephone">
+                  <label for="name"></label>
+                  <input type="tel" placeholder="Telephone" name="telephone" id="telephone_input">
+                </div>
+                <div id="subject">
+                  <label for="subject"></label>
+                  <select placeholder="Objet du message *" name="subject" id="subject_input" required>
+                    <option disabled hidden selected>Objet du message *</option>
+                    <option>Information</option>
+                    <option>Je n'arrive pas à réserver de vélo</option>
+                    <option>Problème lié à l'application</option>
+                    <option>Autre demande</option>
+                  </select>
+                </div>
+                <div id="message">
+                  <label for="message"></label>
+                  <textarea name="message" placeholder="Votre message *" id="message_input" cols="30" rows="5" required></textarea>
+                </div>
+                <div id="submit">
+                  <input type="submit" value="Envoyer" id="form_button" />
+                </div>
+              </form>
 					</div>
 		</section>
-		<footer>
-			<div id="dublin">
-				<a href="http://www.dublincity.ie/" target="blank" title="Dublin City Council"><img src="images/dublin.png" width="135" height="135" alt="logo dublin city council" /></a>
-			</div>
-			<p>
-				VeloCity © 2019 - Tous droits réservés 
-			</p>
-		</footer>
 		
+
+<footer>
+    <div id="footer1">    
+        <div id="bloc1">
+            <img src="images/footerlogo.png" alt="logo velocity dublin velo"/>
+            <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            <p><i class="fa fa-phone"></i>  +353 1 878 5398  </p>
+            <p><i class="fa fa fa-envelope"></i> <a href="mailto:info@velocity.com">info@velocity.com</a></p>
+        </div>
+        
+        
+        <div id="bloc2">
+            <h5>Lorem</h5>
+            <ul class="footer-ul">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            </ul>
+        </div>
+        
+        
+        <div id="bloc3">
+            <h5>Ipsum</h5>
+            <ul class="footer-ul">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            </ul>
+        </div>
+        
+        
+        <div id="bloc4">
+            <h5>Ils nous font confiance</h5>
+            <a href="https://www.failteireland.ie/" target="blank" title="Failte Ireland"><img src="images/failte-ireland.png" width="150" height="29" alt="logo failte ireland" /></a>
+		    <a href="https://www.dublincity.ie/" target="blank" title="Dublin City Council"><img src="images/dublin.png" width="135" height="61" alt="logo dublin city council" /></a>
+        </div>
+    </div>
+    
+    
+    <hr>
+    <div class="container">
+       <!-- <ul class="foote_bottom_ul_amrc">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+        </ul>-->
+        
+                
+        <ul id="social">
+        <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+
+        <p id="copyright"> Velocity @2019 | Tous droits réservés</p>
+
+    </div>
+</footer>
+	
 		<script src="js/timer.js"></script>
 		<script src="js/signature.js"></script>
-		<script src="js/map.js"></script>
 		<script src="js/slider.js"></script>
 		<script src="js/menu.js"></script>
 		<script src="js/smoothscroll.js"></script>
+		<script src="js/map.js"></script>
 		<script src="https://kit.fontawesome.com/535b686577.js"></script>
 	</body>
 </html>
