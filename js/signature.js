@@ -49,4 +49,8 @@ class Signature {
     
     
 }
+<<<<<<< HEAD
 
+=======
+const sign = new Signature('sign');
+>>>>>>> 0713761ef1b266cdd23ebee4ebf6addf4eb040ab
