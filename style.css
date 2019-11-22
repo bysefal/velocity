@@ -865,6 +865,17 @@ nav li a
 	transform: translateY(-85px);
 }
 
+#station-status 
+{
+    font-size:15px;
+    color: #f2f9d8;
+}
+
+#station-info
+{
+    font-size:15px;
+}
+
 #close
 {
 	height:30px;
@@ -1014,6 +1025,11 @@ nav li a
 #sign.display
 {
 	opacity:1;
+}
+
+#blank 
+{
+    display:none;
 }
 
 #message-validation
@@ -1441,17 +1457,12 @@ footer hr {width:70%; border-bottom:1px; color:#403f3f;}
 /* Mobile Portrait View */
 @media screen and (max-width:767px)
 {
-	#service
-	{
-		flex-direction:column;
-		align-items: center;
-	}
 
 	.line2
 	{
-		width: 0;
-		height: 100px;
-		margin: 0 !important;
+		width: 10%;
+		height: 0;
+		margin: 60px 0 !important;
 		border: 1px solid #a8cd6e;
 	}
 	
@@ -1486,7 +1497,7 @@ footer hr {width:70%; border-bottom:1px; color:#403f3f;}
 	#reserver
 	{
 		top:82%;
-		left:30%;
+		left:40%!important;
 	}
 
 	#diap
@@ -1496,14 +1507,74 @@ footer hr {width:70%; border-bottom:1px; color:#403f3f;}
 
 	#prev
 	{
-		left:-7%;
+		left:-3.5%;
 	}
 
 	#next
 	{
-		right:-7%;
+		right:-3.5%;
+	}
+	
+	
+	#service {
+	    margin: 60px auto;
 	}
 
+    #service div {
+        margin: 10px 5px;
+    }
+    
+    #t1 {
+        width: 90px;
+        height: 90px;
+    }
+    
+    #t1::before {
+        width: 90px;
+        height: 90px;
+        background-size: 90px;
+    }
+
+    #t1::after {
+    
+        width: 100%;
+        top: 33px;
+    }   
+    
+    #t2 {
+        width: 90px;
+        height: 90px;
+    }
+    
+    #t2::before {
+        width: 90px;
+        height: 90px;
+        background-size: 90px;
+    }
+
+    #t2::after {
+    
+        width: 100%;
+        top: 33px;
+    }   
+    
+    #t3 {
+        width: 90px;
+        height: 90px;
+    }
+    
+    #t3::before {
+        width: 90px;
+        height: 90px;
+        background-size: 90px;
+    }
+
+    #t3::after {
+    
+        width: 100%;
+        top: 33px;
+    }   
+	
 	#contactform
 	{
 		width:100%!important;
@@ -1606,12 +1677,71 @@ footer hr {width:70%; border-bottom:1px; color:#403f3f;}
 	{
 		display:none;
 	}
-
-	#service
-	{
-		flex-direction:column;
-		align-items: center;
+	
+	#service {
+	    margin: 60px auto;
 	}
+
+    #service div {
+        margin: 10px 5px;
+    }
+    
+    #t1 {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #t1::before {
+        width: 80px;
+        height: 80px;
+        background-size: 80px;
+    }
+
+    #t1::after {
+    
+        width: 100%;
+        top: 30px;
+    }   
+    
+    #t2 {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #t2::before {
+        width: 80px;
+        height: 80px;
+        background-size: 80px;
+    }
+
+    #t2::after {
+    
+        width: 100%;
+        top: 30px;
+    }   
+    
+    #t3 {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #t3::before {
+        width: 80px;
+        height: 80px;
+        background-size: 80px;
+    }
+
+    #t3::after {
+    
+        width: 100%;
+        top: 30px;
+    }   
+    
+    .line2 {
+    width: 15px;
+    height: 0;
+    margin: 60px 0 !important;
+    }
 
 	#dublin
 	{

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var goToPosition = document.getElementById(targetElementId).offsetTop;
         var distance = goToPosition - currentPosition;
 
-        var totalStep = 40;
+        var totalStep = 50;
         var currentStep = 0;
         var intervalTime = 5;
 

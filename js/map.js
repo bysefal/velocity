@@ -14,7 +14,7 @@ class Map {
         	accessToken: this.token,
 
         });
-        
+
        this.map.addControl(new mapboxgl.NavigationControl()); // Ajout navigation à la carte
        this.map.scrollZoom.disable(); // Désactive le scroll zoom  
 
@@ -22,4 +22,4 @@ class Map {
     
 }; // fin de la classe
 
-const velocityMap = new Map('map', -6.257, 53.348, 12.5, 'mapbox://styles/hpm/ck0u3ztpb19h61ckfv331406o', 'pk.eyJ1IjoiaHBtIiwiYSI6ImNqeDRrZmlwMTA5b2QzeW50eHZqM3MweTIifQ.N87k4WgfOf0x0e9Jn2Yv5g');  
+

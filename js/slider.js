@@ -71,5 +71,3 @@ class Slideshow {
         this.slideTo(this.index);
     }
 };
-
-const slider = new Slideshow("#diap", 5000);
