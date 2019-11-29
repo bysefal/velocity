@@ -126,41 +126,43 @@
 			<div class="line2"></div>
 			<div id="t3"></div>
 		</section>
-		<section id="carte" class="menu">
-			<h2>Réserver un vélo</h2>
-			<div id="map">
-				<div id="reservation">
-					<div id="close">
-						<p>
-							X
-						</p>
-					</div>
-					<div id="station-block">
-					<div id="station-name"></div>
-					<div id="station-status"></div>
-					<div id="station-info"></div>
-					</div>
-					<button id="bouton-reserver" type="button">Réserver</button>
-                    <div id="form">
-							<p>
-								<input type="text" name="name" id="name" placeholder="Nom" required/>
-								<span id="name-text"></span>
-								<br />
-								<input type="text" name="name" id="firstname" placeholder="Prénom" required/>
-								<span id="firstname-text"></span>
-								<br />
-								<br />
-								<input class="button" type="submit" id="valider" value="Valider" name="valider" />
-							</p>
-					</div>
-						<canvas id="sign" width="300"  height="170"></canvas>
-						<canvas id="blank" width="300"  height="170"></canvas>
-					<div id="message-validation">
-					    <p>Votre réservation a bien été enregistrée</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <section id="carte" class="menu">
+        			<h2>Réserver un vélo</h2>
+        			<div id="map">
+        			    <div id="overlay"></div>
+        				<div id="reservation">
+        					<div id="close">
+        						<p>
+        							X
+        						</p>
+        					</div>
+        					<div id="station-block">
+        					<div id="station-name"></div>
+        					<div id="station-status"></div>
+        					<div id="station-info"></div>
+        					</div>
+        					<button id="bouton-reserver" type="button">Réserver</button>
+                            <div id="form">
+        							<p>
+        								<input type="text" name="name" id="name" placeholder="Nom" required/>
+        								<span id="name-text"></span>
+        								<br />
+        								<input type="text" name="name" id="firstname" placeholder="Prénom" required/>
+        								<span id="firstname-text"></span>
+        								<br />
+        								<br />
+        								<input class="button" type="submit" id="valider" value="Valider" name="valider" />
+        							</p>
+        					</div>
+        						<canvas id="sign" width="300"  height="170"></canvas>
+        						<canvas id="blank" width="300"  height="170"></canvas>
+        					<div id="message-validation">
+        					    <p>Votre réservation a bien été enregistrée</p>
+        					    <button id="annuler" type="button">Annuler votre réservation</button>
+        					</div>
+        				</div>
+        			</div>
+        		</section>
 		<div id="reservation-valid">
 			<div id="timer">
 				
@@ -293,6 +295,7 @@
 		<script src="js/station.js"></script>
 		<script src="js/signature.js"></script>
 		<script src="js/timer.js"></script>
+		<script src="js/reservation.js"></script>
 		<script src="js/app.js"></script>
 		<script src="https://kit.fontawesome.com/535b686577.js"></script>
 	</body>
